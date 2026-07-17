@@ -22,15 +22,18 @@
 
 .navbar ul {
   display: flex;
-  justify-content: flex-end;
-  gap: 25px;
-  margin-left: auto;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
 
 }
 
 .navbar ul li {
   list-style: none;
   border-radius: 4px;
+  width: 100%;
+  text-align: center;
 }
 
 .navbar ul li a {
@@ -39,7 +42,7 @@
   padding: 10px;
   display: inline-block;
   width: 100%;
-  font-family: sans-serif;
+  font-family: 'Inter';
   font-weight: bold;
 }
 
@@ -47,26 +50,22 @@
   color: var(--white);
 }
 
+.navbar ul .nav-item {
+  position: relative;
+}
+
 .navbar ul .nav-item .sub-menu {
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  right: 5%;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   transition: opacity 0.5s ease;
   display: block;
   background-color: var(--white);
-}
-
-@media (min-width: 768px) {
-  .navbar ul .nav-item .sub-menu {
-    right: 15%;
-  }
-}
-
-@media (min-width: 1024px) {
-  .navbar ul .nav-item .sub-menu {
-    right: 13%;
-  }
+  z-index: 10;
+  width: 200px;
 }
 
 .navbar ul .nav-item:hover .sub-menu,
@@ -75,11 +74,8 @@
   opacity: 1;
 }
 
-
 body {
     background-color: var(--blue);
-    margin: 0;
-    padding: 0;
     width: 100%;
     min-height: 100vh;
 }
@@ -88,12 +84,14 @@ body {
     background-color: var(--yellow);
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 30px;
-    padding: 15px 0;
+    gap: 15px;
+    padding: 20px;
     text-align: center;
     margin: 0 0 40px 0;
+    position: relative;
 }
 
 h1 {
@@ -101,7 +99,7 @@ h1 {
     margin: 0;
     text-align: center;
     font-family: 'Cinzel decorative', serif;
-    font-size: 100px;
+    font-size: 2.5rem;
     text-shadow: 
       0 0 3px var(--blue),   
       0 0 0px var(--blue),  
@@ -110,7 +108,7 @@ h1 {
 }
 
 .logo {
-    position: absolute;
+    position: static;
     left: 40px;
     justify-self: start;
     height: 150px;
@@ -123,10 +121,54 @@ h1 {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    background-attachment: fixed;
+    background-attachment: scroll;
     min-height: 100vh;
     width: 100%;
     display: block;
+}
+
+@media (min-width: 768px) {
+  .navbar ul {
+    flex-direction: row; 
+    justify-content: flex-end;
+    gap: 25px;
+    margin-left: auto;
+  }
+
+  .navbar ul li {
+    width: auto;
+  }
+
+  .navbar ul .nav-item .sub-menu {
+    left: auto;
+    transform: none;
+    right: 15%;
+  }
+
+  .title {
+    flex-direction: row; 
+    padding: 15px 0;
+  }
+
+  .logo {
+    position: absolute;
+    left: 40px;
+    height: 150px;
+  }
+
+  h1 {
+    font-size: 100px; 
+  }
+
+  #home {
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar ul .nav-item .sub-menu {
+    right: 13%;
+  }
 }
 
 h2 {
@@ -137,7 +179,7 @@ h2 {
     padding-top: 10px;
     margin: 0;
     line-height: 1.5;
-    font-size: 45px;
+    font-size: 28px;
     
 }
 
@@ -146,21 +188,22 @@ h3 {
     padding: 50px;
     color: var(--yellow);
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .tune {
     background-color: var(--yellow);
     width: 100%;
-    height: 250px;
+    height: 200px;
+    padding: 20px;
 }
 
 h4, h5{
     color: var(--blue);
     font-family: 'Cinzel decorative', serif;
-    font-size: 80px;
+    font-size: 36px;
     padding-top: 15px;
-    justify-self: center;
+    text-align: center;
     text-shadow: 
       0 0 3px var(--blue),   
       0 0 0px var(--blue),  
@@ -176,16 +219,16 @@ h4, h5{
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 50px 0 60px 40px;
-    margin: 50px 0 0 0;
-    height: 270px;
+    padding: 30px 20px;
+    margin: 40px 0 0 0;
+    min-height: auto;
 }
 
 p {
     color: var(--blue);
     font-family: 'IBM Plex Mono';
     font-weight: 700;
-    font-size: 38px;
+    font-size: 22px;
     letter-spacing: 0.5px;
     margin: 0 0 15px 0;
     text-align: left;
@@ -208,15 +251,54 @@ p {
   text-decoration: none;
   color: var(--blue);
   font-family: 'Inter';
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   text-align: left;
   width: fit-content;
 }
 
+@media (min-width: 768px) {
+  h2 {
+    font-size: 45px;
+    padding-left: 50px;
+  }
+
+  h3 {
+    padding: 50px;
+    font-size: 20px;
+  }
+
+  .tune {
+    height: 250px;
+    min-height: auto;
+  }
+
+  h4, h5 {
+    font-size: 80px;
+    justify-self: center;
+  }
+
+  .site-footer {
+    padding: 50px 0 60px 40px;
+    height: 270px;
+    margin-top: 50px;
+  }
+
+  p {
+    font-size: 38px;
+  }
+
+  .contact-items {
+    font-size: 24px;
+  }
+
+  .icon {
+    font-size: 28px; /* Restores your original size on desktop layout screens */
+  }
+}
 
 .cstrEmbed {
-    mix-blend-mode:lighten;
+    mix-blend-mode: lighten;
 }
 
 #root, .navbar {
@@ -225,275 +307,320 @@ p {
 }
 
 .contact-item:hover {
-    opacity: 0.8;                   /* Subtle feedback on link hover states */
+    opacity: 0.8;                   
 }
 
-/* --- ICON DESIGN PLACEHOLDERS --- */
+
 .icon {
-    font-size: 28px;                /* Scales icon glyph size relative to layout line */
+    font-size: 28px;                
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
 }
 
 
 #stars-bg {
-    background-image: url(bg4.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    min-height: 100vh;
-    width: 100%;
-    display: block;
+  background-image: url(bg4.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll; /* Prevents background glitches on mobile browsers */
+  min-height: 100vh;
+  width: 100%;
+  display: block;
 }
 
 .date {
-    background-color: var(--yellow);
-    border-radius: 50px;
-    padding: 10px 40px;
-    margin: 10px auto;
-    width: 140vh;
-    max-width: 1200px;
-    display: flex;
-    height: 90px;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: min(35px, 10vw);
-    font-family: 'Cinzel Decorative', serif;
-    text-align: center;
-    color: var(--blue);
-    text-shadow: 
-      0 0 2px var(--blue),   
-      0 0 0px var(--blue),  
-      0 0 0px var(--blue),   
-      0 0 1px rgba(0, 150, 255, 0.4); 
+  background-color: var(--yellow);
+  border-radius: 50px;
+  padding: 10px 20px; /* Reduced from 40px to prevent text clipping */
+  margin: 10px auto;
+  width: 90%; /* Changed from 140vh to prevent massive horizontal screen overflow */
+  max-width: 1200px;
+  display: flex;
+  min-height: 60px; /* Replaced height: 90px with min-height for text wrapping safety */
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: min(24px, 6vw); /* Scaled down for compact viewports */
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+  color: var(--blue);
+  text-shadow: 
+    0 0 2px var(--blue),   
+    0 0 1px rgba(0, 150, 255, 0.4); 
 }
 
 .schedule-section {
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 50px;
+  padding: 0 15px; /* Adds a safety margin to prevent content touching screen edges */
 }
 
+/* TIMELINE CONTAINER (Mobile-First: Single Column) */
 .timeline-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
+/* Move the timeline anchor line to the left edge on mobile */
 .center-line {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(to bottom, transparent, rgba(240, 234, 214, 0.4) 10%, rgba(240, 234, 214, 0.4) 90%, transparent);
-    transform: translateX(-50%);
-    z-index: 1;
+  position: absolute;
+  left: 15px; 
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(240, 234, 214, 0.4) 10%, rgba(240, 234, 214, 0.4) 90%, transparent);
+  transform: none;
+  z-index: 1;
 }
 
+/* All timeline items span full width on mobile */
 .timeline-item {
-    position: relative;
-    width: 50%; 
-    display: flex;
-    align-items: center;
-    z-index: 2;
-    box-sizing: border-box;
+  position: relative;
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  box-sizing: border-box;
+  left: 0; /* Forces right-side items back to the left margin */
 }
 
-.timeline-item.right {
-    left: 50%;
-}
-
+/* Star markers line up perfectly along the left vertical line */
 .star-marker {
-    font-size: 24px;
-    color: var(--yellow);
-    text-shadow: 0 0 10px rgba(240, 234, 214, 0.8);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-
-.left .star-marker {
-    right: -11px; 
-}
-
-.right .star-marker {
-    left: -11px; 
+  font-size: 20px;
+  color: var(--yellow);
+  text-shadow: 0 0 10px rgba(240, 234, 214, 0.8);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 6px; /* Standardizes layout positioning */
+  right: auto;
 }
 
 .text-block {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    width: 100%;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-}
-
-.left .text-block {
-    padding-right: 25px;
-    text-align: right;
-    align-items: flex-end;
-}
-
-.right .text-block {
-    padding-left: 25px;  
-    text-align: left;
-    align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding-left: 45px; /* Leaves clear room for the star graphics */
+  padding-right: 0;
+  text-align: left; /* All text aligns cleanly left on phones */
+  align-items: flex-start;
 }
 
 .schedule-name {
-    font-size: 23px;
-    color: #ffffff;
+  font-size: 18px; /* Scaled down slightly from 23px */
+  color: #ffffff;
 }
 
 .time {
-    font-size: 25px;
-    color: var(--yellow);
-    
+  font-size: 20px; /* Scaled down slightly from 25px */
+  color: var(--yellow);
 }
-
 
 .host {
-    font-size: 20px;
-    font-style: italic;
-    color: var(--yellow);
-    opacity: 0.8;
+  font-size: 16px; /* Scaled down slightly from 20px */
+  font-style: italic;
+  color: var(--yellow);
+  opacity: 0.8;
 }
 
+/* DESKTOP STYLES (Activates split two-column view at 768px and above) */
+@media (min-width: 768px) {
+  .date {
+    width: 140vh;
+    height: 90px;
+    font-size: min(35px, 10vw);
+    padding: 10px 40px;
+  }
 
+  .timeline-wrapper {
+    gap: 40px;
+  }
 
+  .center-line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
+  .timeline-item {
+    width: 50%;
+  }
+
+  .timeline-item.right {
+    left: 50%;
+  }
+
+  .star-marker {
+    font-size: 24px;
+  }
+
+  .left .star-marker {
+    left: auto;
+    right: -11px; 
+  }
+
+  .right .star-marker {
+    left: -11px; 
+  }
+
+  .left .text-block {
+    padding-right: 25px;
+    padding-left: 0;
+    text-align: right;
+    align-items: flex-end;
+  }
+
+  .right .text-block {
+    padding-left: 25px;
+    padding-right: 0;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .schedule-name { font-size: 23px; }
+  .time { font-size: 25px; }
+  .host { font-size: 20px; }
+  #stars-bg { background-attachment: fixed; }
+}
 
 .player {
-  padding: 30px;
-  margin: 50px auto;
+  margin: 30px auto; /* Slightly reduced top/bottom margin for mobile spacing */
   background-color: var(--yellow);
   border-radius: 30px;
   width: 90%;
-  padding: 13px;
+  padding: 13px; /* Cleaned up duplicate declarations */
+  display: flex; /* Added display flex to make justify-content work */
   justify-content: center;
 }
 
 .social-container {
-    background-color: var(--yellow);
-    border-radius: 30px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 60%;
-    box-sizing: border-box;
+  background-color: var(--yellow);
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%; /* Expanded to 90% so your text/cards fit on narrow mobile screens */
+  max-width: 600px; /* Limits size on larger views */
+  box-sizing: border-box;
 }
 
 h6 {
-    font-family: 'cinzel decorative';
-    font-size: 45px;
-    color: var(--blue);
-    margin-bottom: 15px;
-    display: flex;
-    gap: 10px auto;
-    justify-content: center;
-    display: flex;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 26px; /* Scaled down from 45px so titles do not break into ugly multiple lines */
+  color: var(--blue);
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px; /* Fixed invalid '10px auto' syntax error */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .social-preview {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 15px;
-    margin: 10px auto;
-    justify-content: center;
-    display: flex;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* DESKTOP STYLES (Activates at 768px wide screens and above) */
+@media (min-width: 768px) {
+  .player {
+    padding: 30px; /* Restored your original deep padding for large displays */
+    margin: 50px auto;
+  }
+
+  .social-container {
+    width: 60%; /* Returns container to your original narrow layout on desktop */
+  }
+
+  h6 {
+    font-size: 45px; /* Restored original cinematic heading font-size */
+  }
 }
 
 .interact-box {
   width: 100%;
   max-width: 700px;
-  margin: 40px auto;
+  margin: 30px auto;
   font-family: 'IBM plex mono';
+  padding: 0 15px; /* Keeps element away from touch screen glass edges */
 }
 
-
+/* Tabs will wrap into rows or scale proportionally on phones */
 .tabs {
   display: flex;
+  flex-wrap: wrap; /* Allows tabs to drop down safely instead of squishing text */
   align-items: flex-end;
+  width: 100%;
 }
 
-/* Default state for unselected tab hooks */
 .tab {
   font-family: inherit;
   font-weight: bold;
-  font-size: 14px;
-  padding: 12px 16px;
+  font-size: 13px; /* Scaled down slightly for mobile rows */
+  padding: 10px 14px; /* More compact padding for tighter layouts */
   border: none;
   border-radius: 12px 12px 0 0;
   cursor: pointer;
-  
   color: var(--blue);
   transition: all 0.15s ease-in-out;
+  flex: 1 1 auto; /* Allows all tabs to distribute space evenly on phones */
+  text-align: center;
 }
 
-.tab-confessions {
-    background-color: var(--yellow);
-
-}
-
-.tab-song {
-    background-color: #f2e6c0;
-}
-
-.tab-feedback {
-    background-color: #d5caa6;
-}
+.tab-confessions { background-color: var(--yellow); }
+.tab-song { background-color: #f2e6c0; }
+.tab-feedback { background-color: #d5caa6; }
 
 .tab.active {
-  padding-bottom: 16px;
+  padding-bottom: 14px;
   z-index: 2;
 }
 
+/* Content panel defaults to uniform rounded edges on mobile if tabs wrap */
 .content-panel {
-  border-radius: 0 24px 24px 24px;
-  padding: 30px 24px;
+  border-radius: 12px; /* Uniform rounded container works best with wrapped tabs */
+  padding: 20px 15px; /* Comfortable padding for narrow viewports */
   margin-top: -1px; 
-  min-height: 400px;
+  min-height: 350px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   transition: background-color 0.2s ease-in-out;
 }
 
-.interact-box:has(.tab-confessions.active) .content-panel {
-    background-color: var(--yellow);
-}
-
-.interact-box:has(.tab-song.active) .content-panel {
-    background-color: #f2e6c0;
-}
-
-.interact-box:has(.tab-feedback.active) .content-panel {
-    background-color: #d5caa6;
-}
+.interact-box:has(.tab-confessions.active) .content-panel { background-color: var(--yellow); }
+.interact-box:has(.tab-song.active) .content-panel { background-color: #f2e6c0; }
+.interact-box:has(.tab-feedback.active) .content-panel { background-color: #d5caa6; }
 
 .input-group {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .input-group label {
   display: block;
-  font-size: 20px;
+  font-size: 16px; /* Scaled down from 20px to prevent wrapping labels */
   color: var(--blue);
-  margin-bottom: 8px;
-  padding-left: 8px;
+  margin-bottom: 6px;
+  padding-left: 4px;
   font-family: 'IBM plex mono';
   font-weight: 500;
 }
@@ -504,23 +631,19 @@ h6 {
   background-color: var(--blue);
   border: none;
   outline: none;
-  padding: 16px 20px;
+  padding: 12px 16px; /* Slightly slimmed down padding for input inputs */
   border-radius: 30px;
   color: var(--yellow);
   font-family: 'IBM plex mono';
-  font-size: 15px;
+  font-size: 14px; /* Prevents iOS from auto-zooming web pages on form focus */
 }
 
 .input-group input::placeholder {
   color: var(--yellow);
 }
 
-.tab-content {
-    display: none; 
-}
-.tab-content.active-content {
-    display: block;
-}
+.tab-content { display: none; }
+.tab-content.active-content { display: block; }
 
 .submit-wrapper {
   width: 100%;
@@ -530,8 +653,8 @@ h6 {
 }
 
 .submit-button {
-  background-color: var(--yellow);
-  color: var(blue);
+  background-color: var(--blue); /* Flipped background and color to make it readable */
+  color: var(--yellow); /* Fixed missing dash syntax typo 'var(blue)' */
   font-family: 'IBM Plex Mono';
   font-size: 16px;
   font-weight: bold;
@@ -546,5 +669,41 @@ h6 {
 .submit-button:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(240, 234, 214, 0.4);
+}
+
+/* DESKTOP STYLES (Activates at 768px wide screens and above) */
+@media (min-width: 768px) {
+  .interact-box {
+    padding: 0;
+  }
+
+  .tabs {
+    flex-wrap: nowrap; /* Disables tab wrapping on large computer viewports */
+  }
+
+  .tab {
+    font-size: 14px;
+    padding: 12px 16px;
+    flex: none; /* Disables block auto-expansion */
+  }
+
+  .tab.active {
+    padding-bottom: 16px;
+  }
+
+  .content-panel {
+    border-radius: 0 24px 24px 24px; /* Restores asymmetrical classic folder tab style */
+    padding: 30px 24px;
+    min-height: 400px;
+  }
+
+  .input-group label {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
 }
 
