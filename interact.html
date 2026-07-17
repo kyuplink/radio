@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Schedule</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.3/babel.min.js"></script>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      src="index.jsx"
+    ></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Cinzel+Decorative:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Cinzel+Decorative:wght@400;700;900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Press+Start+2P&display=swap" rel="stylesheet">  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Cinzel+Decorative:wght@400;700;900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+    
+<body id="stars-bg">
+     <div id="root"></div>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      data-presets="react"
+      data-type="module"
+    >
+      import { Navbar } from './index.jsx';
+      ReactDOM.createRoot(document.getElementById('root')).render(
+        <Navbar />
+      );
+    </script>
+
+<div class="title">
+        <img src="logo.png" alt="KYUplink Logo" class="logo">
+    <h1>INTERACT</h1>
+</div>
+
+<div class="interact-box">
+        
+<form id="interact-form">
+  <div class="tabs">
+    <button type="button" class="tab tab-confessions active" data-tab="confessions">Confessions</button>
+    <button type="button"class="tab tab-song" data-tab="song">Song suggestion</button>
+    <button type="button" class="tab tab-feedback" data-tab="feedback">Feedback</button>
+  </div>
+
+       
+ <div class="content-panel">       
+            
+  <div id="confessions-panel" class="tab-content active-content">
+    <div class="input-group">
+      <label>Spill the tea</label>
+      <input type="text" name="confession_text" placeholder="But, please keep it clean">
+    </div>
+
+    <div class="input-group">
+      <label>How should we address you ?</label>
+      <input type="text" name="confession_author" placeholder="Or keep it anonymous, no one rlly cares tbh">
+    </div>
+  </div>
+
+            
+  <div id="song-panel" class="tab-content">
+    <div class="input-group">
+      <label>What track is on repeat?</label>
+      <input type="text" name="song_track" placeholder="Artist - Song Name">
+    </div>
+    <div class="input-group">
+      <label>Who is this for?</label>
+      <input type="text" name="song_recipient" placeholder="Leave blank if it's for the vibe">
+    </div>
+  </div>
+
+            
+  <div id="feedback-panel" class="tab-content">
+    <div class="input-group">
+      <label>What can we improve?</label>
+      <input type="text" name="feedback_text" placeholder="Drop your honest thoughts here...">
+    </div>
+  </div>
+
+  </div>
+
+  <div class="submit-wrapper">
+    <button type="submit" class="submit-button">Submit</button>
+  </div>
+</form>
+</div>
+
+    <script src="interact.js"></script>
+    
+</body>
+</html>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>KYUplink Radio Station</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.3/babel.min.js"></script>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      src="index.jsx"
+    ></script>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Cinzel+Decorative:wght@400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Cinzel+Decorative:wght@400;700;900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Press+Start+2P&display=swap" rel="stylesheet">  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Cinzel+Decorative:wght@400;700;900&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+
+
+
+  <body id="home">
+    <div id="root"></div>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      data-presets="react"
+      data-type="module"
+    >
+      import { Navbar } from './index.jsx';
+      ReactDOM.createRoot(document.getElementById('root')).render(
+        <Navbar />
+      );
+    </script>
+
+
+
+<div class="title">
+    <img src="logo.png" alt="KYUplink Logo" class="logo">
+    <h1>KYUPLINK</h1>
+</div>
+
+
+
+<div class="main-content">
+    <h2>What is<br>KYUPLINK?</h2>
+
+    <h3>KYUplink is KY’s very<br>
+        first student-run radio, a<br>
+        platform bringing voices,<br>
+        stories and creative ideas<br>
+        together. From campus<br>
+        updates to student<br>
+        features, academic<br>
+        segments to specially<br>
+        curated playlists, this is<br>
+        your space to tune in,<br>
+        unwind and connect.</h3>
+    
+    <div class="tune">
+        <h4>Our Next Broadcast</h4>
+        <h4>00:00:00</h4>
+    </div>
+    
+
+    <section>
+    <div data-type="newStreamPlayer"
+        data-publicToken="2695118d-36f4-4b3d-8b65-392566e04203"
+        data-theme="dark"
+        data-color="303f5e"
+        data-channelId=""
+        data-rendered="false"
+        class="cstrEmbed">
+        <a href="https://www.caster.fm">Shoutcast Hosting</a> <a href="https://www.caster.fm">Stream Hosting</a>
+        <a href="https://www.caster.fm">Radio Server Hosting</a>
+    </div>
+    <script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
+    </section>
+</div>
+
+
+
+
+<footer class="site-footer">
+  <p>Contact us</p>
+  <div class="contact-links">
+<a href="mailto:kyuplink@gmail.com" class="contact-items">
+  <span class="icon mail-icon">✉</span>
+  <span class="text">kyuplink@gmail.com</span>
+</a>
+
+<a href="https://www.instagram.com/kyuplink?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="contact-items">
+  <span class="icon insta-icon">
+    <img src="insta.svg" alt="Instagram Logo" width="34" height="50">
+  </span>
+  <span class="text">@kyuplink</span>
+</a>
+</div>
+
+</footer>
+
+  </body>
+</html>
