@@ -18,14 +18,23 @@
 
 .navbar {
   background-color: var(--blue);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .navbar ul {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
   gap: 15px;
   width: 100%;
+  max-width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  white-space: nowrap;
 
 }
 
