@@ -180,17 +180,18 @@ h1 {
   .navbar ul {
     flex-direction: row; 
     align-items: center; 
-    justify-content: flex-end; 
-    gap: 6px;
+    justify-content: center; 
+    gap: 15px;
+    padding: 10px 15px;
     white-space: nowrap; 
   }
   .navbar ul li {
     width: 100%; 
-    text-align: right; 
+    text-align: center; 
   }
   .navbar ul li a {
     font-size: 13px; 
-    padding: 5px 6px;
+    padding: 5px 4px;
   }
   .navbar ul .nav-item .sub-menu {
     position: absolute; 
@@ -200,6 +201,28 @@ h1 {
     transform: none; 
     width: 140px; 
     background-color: transparent;
+  }
+
+    .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;      
+    position: absolute;           
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .logo {
+    position: absolute;           
+    left: 15px;                  
+    height: 60px;                
+    width: auto;
+  }
+
+  h1 {
+    font-size: 36px;              
+    margin: 0 auto;               
+    text-align: center;
   }
 }
 
