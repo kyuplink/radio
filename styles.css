@@ -390,22 +390,23 @@ p {
 .date {
   background-color: var(--yellow);
   border-radius: 50px;
-  padding: 10px 20px; /* Reduced from 40px to prevent text clipping */
+  padding: 10px min(40px, 5vw); 
   margin: 10px auto;
-  width: 90%; /* Changed from 140vh to prevent massive horizontal screen overflow */
+  width: 70vh; 
   max-width: 1200px;
   display: flex;
-  min-height: 60px; /* Replaced height: 90px with min-height for text wrapping safety */
+  min-height: 60px; 
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: min(24px, 6vw); /* Scaled down for compact viewports */
+  font-size: min(24px, 6vw); 
   font-family: 'Cinzel Decorative', serif;
   text-align: center;
   color: var(--blue);
   text-shadow: 
     0 0 2px var(--blue),   
     0 0 1px rgba(0, 150, 255, 0.4); 
+    box-sizing: border-box;
 }
 
 .schedule-section {
@@ -416,10 +417,10 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 15px; /* Adds a safety margin to prevent content touching screen edges */
+  padding: 0 15px; 
 }
 
-/* TIMELINE CONTAINER (Mobile-First: Single Column) */
+
 .timeline-wrapper {
   position: relative;
   width: 100%;
@@ -430,30 +431,36 @@ p {
   gap: 30px;
 }
 
-/* Move the timeline anchor line to the left edge on mobile */
+
 .center-line {
   position: absolute;
-  left: 15px; 
+  left: 50%; 
   top: 0;
   bottom: 0;
   width: 2px;
   background: linear-gradient(to bottom, transparent, rgba(240, 234, 214, 0.4) 10%, rgba(240, 234, 214, 0.4) 90%, transparent);
-  transform: none;
+  transform: translateX(-50%);
   z-index: 1;
 }
 
-/* All timeline items span full width on mobile */
+
 .timeline-item {
   position: relative;
-  width: 100%; 
+  width: 50%; 
   display: flex;
   align-items: center;
   z-index: 2;
   box-sizing: border-box;
-  left: 0; /* Forces right-side items back to the left margin */
 }
 
-/* Star markers line up perfectly along the left vertical line */
+.timeline-item {
+    width: 50%;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
 .star-marker {
   font-size: 20px;
   color: var(--yellow);
@@ -461,8 +468,15 @@ p {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 6px; /* Standardizes layout positioning */
-  right: auto;
+}
+
+.left .star-marker {
+  left: auto;
+  right: -9px;
+}
+
+.right .star-marker {
+  left: -9px;
 }
 
 .text-block {
@@ -473,30 +487,38 @@ p {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: bold;
   letter-spacing: 0.5px;
-  padding-left: 45px; /* Leaves clear room for the star graphics */
-  padding-right: 0;
-  text-align: left; /* All text aligns cleanly left on phones */
-  align-items: flex-start;
 }
 
+.left .text-block {
+  padding-right: 20px;
+  padding-left: 0;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.right .text-block {
+  padding-left: 20px;
+  padding-right: 0;
+  text-align: left;
+  align-items: flex-start;
+}
 .schedule-name {
-  font-size: 18px; /* Scaled down slightly from 23px */
+  font-size: 18px; 
   color: #ffffff;
 }
 
 .time {
-  font-size: 20px; /* Scaled down slightly from 25px */
+  font-size: 20px; 
   color: var(--yellow);
 }
 
 .host {
-  font-size: 16px; /* Scaled down slightly from 20px */
+  font-size: 16px; 
   font-style: italic;
   color: var(--yellow);
   opacity: 0.8;
 }
 
-/* DESKTOP STYLES (Activates split two-column view at 768px and above) */
 @media (min-width: 768px) {
   .date {
     width: 140vh;
@@ -527,7 +549,6 @@ p {
   }
 
   .left .star-marker {
-    left: auto;
     right: -11px; 
   }
 
@@ -537,16 +558,10 @@ p {
 
   .left .text-block {
     padding-right: 25px;
-    padding-left: 0;
-    text-align: right;
-    align-items: flex-end;
   }
 
   .right .text-block {
     padding-left: 25px;
-    padding-right: 0;
-    text-align: left;
-    align-items: flex-start;
   }
 
   .schedule-name { font-size: 23px; }
