@@ -249,8 +249,9 @@ h3 {
 .tune {
     background-color: var(--yellow);
     width: 100%;
-    height: 200px;
+    height: 250px;
     padding: 20px;
+    min-height: auto;
 }
 
 .countdown-container {
