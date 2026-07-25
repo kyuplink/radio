@@ -67,7 +67,40 @@
     
     <div class="tune">
         <h4>Our Next Broadcast</h4>
-        <h4>00:00:00</h4>
+        <div class="countdown-container">
+        <div class="time-box"><span class="number" id="days">00</span><span class="label">Days</span></div>
+        <div class="time-box"><span class="number" id="hours">00</span><span class="label">Hours</span></div>
+        <div class="time-box"><span class="number" id="minutes">00</span><span class="label">Minutes</span></div>
+        <div class="time-box"><span class="number" id="seconds">00</span><span class="label">Seconds</span></div>
+    </div>
+
+    <script>
+        const targetDate = new Date("2026-07-26T12:30:00").getTime();
+
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            
+            if (difference < 0) {
+                clearInterval(timer);
+                document.querySelector(".countdown-container").innerHTML = "<h3>Time's Up!</h3>";
+                return;
+            }
+
+          
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            
+            document.getElementById("days").innerText = days < 10 ? "0" + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
+        }, 1000);
+    </script>
     </div>
     
 
