@@ -279,7 +279,10 @@ h3 {
 .label {
   font-size: 0.8rem;
   text-transform: uppercase;
-  color: #aaa;
+  color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  text-align: center;
         }
 
 h4, h5{
