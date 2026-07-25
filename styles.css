@@ -273,6 +273,8 @@ h3 {
   font-weight: bold;
   display: block;
   font-family: 'Cinzel decorative';
+  justify-content: center;
+  text-align: center;
 }
 .label {
   font-size: 0.8rem;
