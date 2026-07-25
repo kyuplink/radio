@@ -570,6 +570,63 @@ p {
   #stars-bg { background-attachment: fixed; }
 }
 
+.text-block {
+  position: relative;
+}
+
+
+.details-tooltip {
+  position: absolute;
+  top: 75%; 
+  width: 220px;
+  background: #303f5e90; 
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: normal;
+  text-align: left;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  opacity: 0;
+  pointer-events: none; 
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  z-index: 10;
+}
+
+h7 {
+color: var(--white);
+font-size: 18px;
+font-weight: normal;
+text-align: left;
+
+}
+
+.left .details-tooltip {
+  right: 20px; 
+}
+
+.right .details-tooltip {
+  left: 20px; 
+}
+
+
+.details-tooltip p {
+  margin: 4px 0;
+}
+
+
+.text-block:hover .details-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+
 .player {
   margin: 30px auto; /* Slightly reduced top/bottom margin for mobile spacing */
   background-color: var(--yellow);
