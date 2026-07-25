@@ -253,6 +253,32 @@ h3 {
     padding: 20px;
 }
 
+.countdown-container {
+  display: flex;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  justify-content: center;
+}
+.time-box {
+  background: var(--blue);
+  color: var(--yellow);
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 70px;
+}
+.number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: block;
+  font-family: 'Cinzel decorative';
+}
+.label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #aaa;
+        }
+
 h4, h5{
     color: var(--blue);
     font-family: 'Cinzel decorative', serif;
