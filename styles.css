@@ -283,7 +283,7 @@ h3 {
   display: flex;
   justify-content: center;
   text-align: center;
-        }
+}
 
 h4, h5{
     color: var(--blue);
