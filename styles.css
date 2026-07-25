@@ -271,7 +271,7 @@ h3 {
 .number {
   font-size: 2.5rem;
   font-weight: bold;
-  display: block;
+  display: flex;
   font-family: 'Cinzel decorative';
   justify-content: center;
   text-align: center;
