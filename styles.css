@@ -652,20 +652,21 @@ text-align: left;
 }
 
 
-.text-block:hover .details-tooltip {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.text-block:hover .details-tooltip,
+.text-block.visible .details-tooltip { 
+  opacity: 1; 
+  visibility: visible; 
+  transform: translateY(0); 
 }
 
 
 .player {
-  margin: 30px auto; /* Slightly reduced top/bottom margin for mobile spacing */
+  margin: 30px auto;
   background-color: var(--yellow);
   border-radius: 30px;
   width: 90%;
-  padding: 13px; /* Cleaned up duplicate declarations */
-  display: flex; /* Added display flex to make justify-content work */
+  padding: 13px; 
+  display: flex;
   justify-content: center;
 }
 
@@ -674,18 +675,18 @@ text-align: left;
   border-radius: 30px;
   padding: 20px;
   margin: 20px auto;
-  width: 90%; /* Expanded to 90% so your text/cards fit on narrow mobile screens */
-  max-width: 600px; /* Limits size on larger views */
+  width: 90%; /
+  max-width: 600px; 
   box-sizing: border-box;
 }
 
 h6 {
   font-family: 'Cinzel Decorative', serif;
-  font-size: 26px; /* Scaled down from 45px so titles do not break into ugly multiple lines */
+  font-size: 26px; /
   color: var(--blue);
   margin-bottom: 15px;
   display: flex;
-  gap: 10px; /* Fixed invalid '10px auto' syntax error */
+  gap: 10px; 
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -700,19 +701,19 @@ h6 {
   justify-content: center;
 }
 
-/* DESKTOP STYLES (Activates at 768px wide screens and above) */
+
 @media (min-width: 768px) {
   .player {
-    padding: 30px; /* Restored your original deep padding for large displays */
+    padding: 30px; 
     margin: 50px auto;
   }
 
   .social-container {
-    width: 60%; /* Returns container to your original narrow layout on desktop */
+    width: 60%; 
   }
 
   h6 {
-    font-size: 45px; /* Restored original cinematic heading font-size */
+    font-size: 45px;
   }
 }
 
@@ -721,7 +722,7 @@ h6 {
   max-width: 700px;
   margin: 30px auto;
   font-family: 'IBM plex mono';
-  padding: 0 15px; /* Keeps element away from touch screen glass edges */
+  padding: 0 15px; 
 }
 
 /* Tabs will wrap into rows or scale proportionally on phones */
