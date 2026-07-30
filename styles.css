@@ -659,6 +659,9 @@ text-align: left;
   transform: translateY(0); 
 }
 
+.text-block {
+  cursor: pointer;
+}
 
 .player {
   margin: 30px auto;
