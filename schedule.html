@@ -147,5 +147,28 @@
     </div>
 
 </div>
+    <script>document.querySelectorAll('.text-block').forEach(block => {
+  block.addEventListener('click', (e) => {
+    // Prevent closing immediately if clicking inside the block
+    e.stopPropagation(); 
+    
+    // Toggle the visible class
+    block.classList.toggle('visible');
+    
+    // Optional: Hide other open tooltips when one is clicked
+    document.querySelectorAll('.text-block').forEach(otherBlock => {
+      if (otherBlock !== block) {
+        otherBlock.classList.remove('visible');
+      }
+    });
+  });
+});
+
+// Hide the tooltip if the user clicks anywhere outside
+document.addEventListener('click', () => {
+  document.querySelectorAll('.text-block').forEach(block => {
+    block.classList.remove('visible');
+  });
+});</script>
 </body>
 </html>
