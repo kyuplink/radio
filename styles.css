@@ -1,0 +1,900 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: #fff;
+  --light-grey: #e1e0e0;
+  --dark-purple: #7c0e7c;
+  --black: #000;
+  --blue: #303f5e;
+  --yellow: #fff6db;
+}
+
+
+.navbar {
+  background-color: var(--blue);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.navbar ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+
+}
+
+.navbar ul li {
+  list-style: none;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--light-grey);
+  padding: 5px;
+  display: inline-block;
+  width: 100%;
+  font-family: 'Inter';
+  font-weight: bold;
+}
+
+.navbar ul .nav-item a:hover {
+  color: var(--white);
+}
+
+.navbar ul .nav-item {
+  position: relative;
+}
+
+.navbar ul .nav-item .sub-menu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.5s ease;
+  display: block;
+  background-color: var(--white);
+  z-index: 10;
+  width: 180px;
+}
+
+.navbar ul .nav-item:hover .sub-menu,
+.navbar ul .nav-item:focus-within .sub-menu {
+  visibility: visible;
+  opacity: 1;
+}
+
+body {
+    background-color: var(--blue);
+    width: 100%;
+    min-height: 100vh;
+}
+
+.title {
+    background-color: var(--yellow);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 0 0 40px 0;
+    position: relative;
+}
+
+h1 {
+    color: var(--blue);
+    margin: 0;
+    text-align: center;
+    font-family: 'Cinzel decorative', serif;
+    font-size: 2.5rem;
+    text-shadow: 
+      0 0 3px var(--blue),   
+      0 0 0px var(--blue),  
+      0 0 0px var(--blue),   
+      0 0 2px rgba(0, 150, 255, 0.4); 
+}
+
+.logo {
+    position: static;
+    height: 50px;
+    width: auto;
+    margin-right: 15px;
+}
+
+
+#home {
+    background-image: url(bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    min-height: 100vh;
+    width: 100%;
+    display: block;
+}
+
+@media (min-width: 768px) {
+  .navbar ul {
+    flex-direction: row; 
+    justify-content: flex-end;
+    gap: 25px;
+    margin-left: auto;
+  }
+
+  .navbar ul li {
+    width: auto;
+  }
+
+  .navbar ul .nav-item .sub-menu {
+    left: auto;
+    transform: none;
+    right: 15%;
+  }
+
+  .logo {
+    position: absolute;
+    left: 40px;
+    height: 150px;
+    margin-right: 30px;
+  }
+
+  h1 {
+    font-size: 100px; 
+  }
+
+  #home {
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar ul .nav-item .sub-menu {
+    right: 13%;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    overflow-x: visible; 
+  }
+  .navbar ul {
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 15px;
+    padding: 10px 15px;
+    white-space: nowrap; 
+  }
+  .navbar ul li {
+    width: 100%; 
+    text-align: center; 
+  }
+  .navbar ul li a {
+    font-size: 13px; 
+    padding: 5px 4px;
+  }
+  .navbar ul .nav-item .sub-menu {
+    position: absolute; 
+    top: 100%;
+    right: 0;
+    left: auto;
+    transform: none; 
+    width: 140px; 
+    background-color: transparent;
+  }
+
+    .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;      
+    position: relative;           
+    padding: 15px 0;
+    width: 100%;
+  }
+
+  .logo {
+    position: absolute;           
+    left: 15px;                  
+    height: 60px;                
+    width: auto;
+  }
+
+  h1 {
+    font-size: 36px;              
+    margin: 0 auto;               
+    text-align: center;
+  }
+}
+
+h2 {
+   color: var(--yellow);
+    font-family: 'Cinzel decorative', serif;
+    font-weight: 400;
+   padding-left: 50px;
+    padding-top: 10px;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 28px;
+    
+}
+
+h3 {
+    font-family: 'IBM Plex Mono';
+    padding: 50px;
+    color: var(--yellow);
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.tune {
+    background-color: var(--yellow);
+    width: 100%;
+    height: 250px;
+    padding: 20px;
+    min-height: auto;
+}
+.countdown-container {
+  display: flex;
+  gap: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  justify-content: center;
+}
+.time-box {
+  background: var(--blue);
+  color: var(--yellow);
+  padding: 15px;
+  border-radius: 8px;
+  min-width: 70px;
+}
+.number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: flex;
+  font-family: 'Cinzel decorative';
+  justify-content: center;
+  text-align: center;
+}
+.label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+h4, h5{
+    color: var(--blue);
+    font-family: 'Cinzel decorative', serif;
+    font-size: 36px;
+    padding-top: 15px;
+    text-align: center;
+    text-shadow: 
+      0 0 3px var(--blue),   
+      0 0 0px var(--blue),  
+      0 0 0px var(--blue),   
+      0 0 2px rgba(0, 150, 255, 0.4); 
+}
+
+.site-footer {
+    background-color: #f2e6c0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px 20px;
+    margin: 40px 0 0 0;
+    min-height: auto;
+}
+
+p {
+    color: var(--blue);
+    font-family: 'IBM Plex Mono';
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    margin: 0 0 15px 0;
+    text-align: left;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 13px;
+}
+
+.contact-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--blue);
+  font-family: 'Inter';
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  width: fit-content;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 45px;
+    padding-left: 50px;
+  }
+
+  h3 {
+    padding: 50px;
+    font-size: 20px;
+  }
+
+  .tune {
+    height: 250px;
+    min-height: auto;
+  }
+
+  h4, h5 {
+    font-size: 80px;
+    justify-self: center;
+  }
+
+  .site-footer {
+    padding: 50px 0 60px 40px;
+    height: 270px;
+    margin-top: 50px;
+  }
+
+  p {
+    font-size: 38px;
+  }
+
+  .contact-items {
+    font-size: 24px;
+  }
+
+  .icon {
+    font-size: 28px; 
+  }
+}
+
+.cstrEmbed {
+    mix-blend-mode: lighten;
+}
+
+#root, .navbar {
+  width: 100%;
+  display: block;
+}
+
+.contact-item:hover {
+    opacity: 0.8;                   
+}
+
+
+.icon {
+    font-size: 28px;                
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+
+#stars-bg {
+  background-image: url(bg4.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: scroll; 
+  min-height: 100vh;
+  width: 100%;
+  display: block;
+}
+
+.date {
+  background-color: var(--yellow);
+  border-radius: 50px;
+  padding: 10px min(40px, 5vw); 
+  margin: 10px auto;
+  width: 50vh; 
+  max-width: 1200px;
+  display: flex;
+  min-height: 60px; 
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: min(24px, 6vw); 
+  font-family: 'Cinzel Decorative', serif;
+  text-align: center;
+  color: var(--blue);
+  text-shadow: 
+    0 0 2px var(--blue),   
+    0 0 1px rgba(0, 150, 255, 0.4); 
+    box-sizing: border-box;
+}
+
+.schedule-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 50px auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px; 
+}
+
+
+.timeline-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+.center-line {
+  position: absolute;
+  left: 50%; 
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, rgba(240, 234, 214, 0.4) 10%, rgba(240, 234, 214, 0.4) 90%, transparent);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+
+.timeline-item {
+  position: relative;
+  width: 50%; 
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  box-sizing: border-box;
+}
+
+.timeline-item {
+    width: 50%;
+}
+
+.timeline-item:hover {
+  z-index: 99999;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.star-marker {
+  font-size: 20px;
+  color: var(--yellow);
+  text-shadow: 0 0 10px rgba(240, 234, 214, 0.8);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.left .star-marker {
+  left: auto;
+  right: -9px;
+}
+
+.right .star-marker {
+  left: -9px;
+}
+
+.text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.left .text-block {
+  padding-right: 20px;
+  padding-left: 0;
+  text-align: right;
+  align-items: flex-end;
+}
+
+.right .text-block {
+  padding-left: 20px;
+  padding-right: 0;
+  text-align: left;
+  align-items: flex-start;
+}
+.schedule-name {
+  font-size: 18px; 
+  color: #ffffff;
+}
+
+.time {
+  font-size: 20px; 
+  color: var(--yellow);
+}
+
+.host {
+  font-size: 16px; 
+  font-style: italic;
+  color: var(--yellow);
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .date {
+    width: 140vh;
+    height: 90px;
+    font-size: min(35px, 10vw);
+    padding: 10px 40px;
+  }
+
+  .timeline-wrapper {
+    gap: 40px;
+  }
+
+  .center-line {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .timeline-item {
+    width: 50%;
+  }
+
+  .timeline-item.right {
+    left: 50%;
+  }
+
+  .star-marker {
+    font-size: 24px;
+  }
+
+  .left .star-marker {
+    right: -11px; 
+  }
+
+  .right .star-marker {
+    left: -11px; 
+  }
+
+  .left .text-block {
+    padding-right: 25px;
+  }
+
+  .right .text-block {
+    padding-left: 25px;
+  }
+
+  .schedule-name { font-size: 23px; }
+  .time { font-size: 25px; }
+  .host { font-size: 20px; }
+  #stars-bg { background-attachment: fixed; }
+}
+
+.text-block {
+  position: relative;
+}
+
+.details-tooltip {
+  position: absolute;
+  top: 75%; 
+  width: 270px;
+  background: #303f5e; 
+  background-color: #303f5e;
+  backdrop-filter: blur(8px); 
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 12px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: normal;
+  text-align: left;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  opacity: 0;
+  pointer-events: none; 
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  z-index: 1000000;
+}
+
+h7 {
+color: var(--white);
+font-size: 18px;
+font-weight: normal;
+text-align: left;
+
+}
+
+.left .details-tooltip {
+  right: 20px; 
+}
+
+.right .details-tooltip {
+  left: 20px; 
+}
+
+
+.details-tooltip p {
+  margin: 4px 0;
+}
+
+
+.text-block:hover .details-tooltip,
+.text-block.visible .details-tooltip { 
+  opacity: 1; 
+  visibility: visible; 
+  transform: translateY(0); 
+}
+
+.text-block {
+  cursor: pointer;
+}
+
+.player {
+  margin: 30px auto; 
+  background-color: var(--yellow);
+  border-radius: 30px;
+  width: 90%;
+  padding: 13px; 
+  display: flex;
+  justify-content: center;
+}
+
+.social-container {
+  background-color: var(--yellow);
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%; /* Expanded to 90% so your text/cards fit on narrow mobile screens */
+  max-width: 600px; /* Limits size on larger views */
+  box-sizing: border-box;
+}
+
+h6 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 26px; /* Scaled down from 45px so titles do not break into ugly multiple lines */
+  color: var(--blue);
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px; /* Fixed invalid '10px auto' syntax error */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.social-preview {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--whatsapp-green);
+            color: var(--blue);
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebd56;
+        }
+
+        .whatsapp-btn svg {
+            margin-right: 10px;
+            fill: var(--blue);
+        }
+
+/* DESKTOP STYLES (Activates at 768px wide screens and above) */
+@media (min-width: 768px) {
+  .player {
+    padding: 30px; /* Restored your original deep padding for large displays */
+    margin: 50px auto;
+  }
+
+  .social-container {
+    width: 60%; /* Returns container to your original narrow layout on desktop */
+  }
+
+  h6 {
+    font-size: 45px; /* Restored original cinematic heading font-size */
+  }
+}
+
+.interact-box {
+  width: 100%;
+  max-width: 700px;
+  margin: 30px auto;
+  font-family: 'IBM plex mono';
+  padding: 0 15px; /* Keeps element away from touch screen glass edges */
+}
+
+/* Tabs will wrap into rows or scale proportionally on phones */
+.tabs {
+  display: flex;
+  flex-wrap: wrap; /* Allows tabs to drop down safely instead of squishing text */
+  align-items: flex-end;
+  width: 100%;
+}
+
+.tab {
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 13px; /* Scaled down slightly for mobile rows */
+  padding: 10px 14px; /* More compact padding for tighter layouts */
+  border: none;
+  border-radius: 12px 12px 0 0;
+  cursor: pointer;
+  color: var(--blue);
+  transition: all 0.15s ease-in-out;
+  flex: 1 1 auto; /* Allows all tabs to distribute space evenly on phones */
+  text-align: center;
+}
+
+.tab-confessions { background-color: var(--yellow); }
+.tab-song { background-color: #f2e6c0; }
+.tab-feedback { background-color: #d5caa6; }
+.tab-senior { background-color: #cebd8a;}
+
+.tab.active {
+  padding-bottom: 14px;
+  z-index: 2;
+}
+
+/* Content panel defaults to uniform rounded edges on mobile if tabs wrap */
+.content-panel {
+  border-radius: 12px; /* Uniform rounded container works best with wrapped tabs */
+  padding: 20px 15px; /* Comfortable padding for narrow viewports */
+  margin-top: -1px; 
+  min-height: 350px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.interact-box:has(.tab-confessions.active) .content-panel { background-color: var(--yellow); }
+.interact-box:has(.tab-song.active) .content-panel { background-color: #f2e6c0; }
+.interact-box:has(.tab-feedback.active) .content-panel { background-color: #d5caa6; }
+.interact-box:has(.tab-senior.active) .content-panel { background-color: #cebd8a; }
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 16px; /* Scaled down from 20px to prevent wrapping labels */
+  color: var(--blue);
+  margin-bottom: 6px;
+  padding-left: 4px;
+  font-family: 'IBM plex mono';
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--blue);
+  border: none;
+  outline: none;
+  padding: 12px 16px; /* Slightly slimmed down padding for input inputs */
+  border-radius: 30px;
+  color: var(--yellow);
+  font-family: 'IBM plex mono';
+  font-size: 14px; /* Prevents iOS from auto-zooming web pages on form focus */
+}
+
+.input-group input::placeholder {
+  color: var(--yellow);
+}
+
+.tab-content { display: none; }
+.tab-content.active-content { display: block; }
+
+.submit-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.submit-button {
+  background-color: var(--blue); /* Flipped background and color to make it readable */
+  color: var(--yellow); /* Fixed missing dash syntax typo 'var(blue)' */
+  font-family: 'IBM Plex Mono';
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(240, 234, 214, 0.4);
+}
+
+/* DESKTOP STYLES (Activates at 768px wide screens and above) */
+@media (min-width: 768px) {
+  .interact-box {
+    padding: 0;
+  }
+
+  .tabs {
+    flex-wrap: nowrap; /* Disables tab wrapping on large computer viewports */
+  }
+
+  .tab {
+    font-size: 14px;
+    padding: 12px 16px;
+    flex: none; /* Disables block auto-expansion */
+  }
+
+  .tab.active {
+    padding-bottom: 16px;
+  }
+
+  .content-panel {
+    border-radius: 0 24px 24px 24px; /* Restores asymmetrical classic folder tab style */
+    padding: 30px 24px;
+    min-height: 400px;
+  }
+
+  .input-group label {
+    font-size: 20px;
+  }
+
+  .input-group input {
+    padding: 16px 20px;
+    font-size: 15px;
+  }
+}
