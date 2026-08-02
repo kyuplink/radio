@@ -79,3 +79,22 @@ form.addEventListener('submit', (event) => {
         submitBtn.disabled = false;
     });
 });
+
+    // Normalize different input configurations into universal columns
+    let finalPayload = { type: activeTab };
+
+    if (activeTab === 'confessions') {
+        finalPayload.mainText = rawData.confession_text;
+        finalPayload.metaDetails = rawData.confession_author || "Anonymous";
+    } else if (activeTab === 'song') {
+        finalPayload.mainText = rawData.song_track;
+        finalPayload.metaDetails = rawData.song_recipient || "The Vibe";
+    } else if (activeTab === 'feedback') {
+        finalPayload.mainText = rawData.feedback_text;
+        finalPayload.metaDetails = "N/A";
+    } 
+    // === ADD THIS NEW BLOCK BELOW ===
+    else if (activeTab === 'senior') {
+        finalPayload.mainText = rawData.senior_text;
+        finalPayload.metaDetails = rawData.senior_author || "Anonymous";
+    }
