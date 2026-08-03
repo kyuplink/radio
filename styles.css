@@ -620,9 +620,9 @@ p {
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
-  padding: 12px;
+  padding: 10px;
   color: #ffffff;
-  font-size: 0px;
+  font-size: 14px;
   font-weight: normal;
   text-align: left;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -634,23 +634,23 @@ p {
   z-index: 1000000;
 }
 
-@media (min-width: 768px) {
-  .details-tooltip {
-    width: 100%;
-    font-size: 10px;
-    z-index: 1000000;
-  }
-  h7 {
-    font-size: 16px;
-  }
+.details-tooltip-title {
+  color: var(--white);
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 6px;
+  display: block;
 }
 
-h7 {
-color: var(--white);
-font-size: 15px;
-font-weight: normal;
-text-align: left;
+.text-block:hover .details-tooltip,
+.text-block.visible .details-tooltip { 
+  opacity: 1; 
+  visibility: visible; 
+  transform: translateY(0); 
+}
 
+.text-block {
+  cursor: pointer;
 }
 
 .left .details-tooltip {
@@ -662,21 +662,15 @@ text-align: left;
 }
 
 
-.details-tooltip p {
-  margin: 4px 0;
-}
-
-
-
-.text-block:hover .details-tooltip,
-.text-block.visible .details-tooltip { 
-  opacity: 1; 
-  visibility: visible; 
-  transform: translateY(0); 
-}
-
-.text-block {
-  cursor: pointer;
+@media (min-width: 768px) {
+  .details-tooltip {
+    width: 280px;
+    font-size: 14px;
+    padding: 14px;
+  }
+ .details-tooltip-title {
+    font-size: 18px;
+  }
 }
 
 .player {
