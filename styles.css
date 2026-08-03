@@ -612,8 +612,11 @@ p {
 
 .details-tooltip {
   position: absolute;
-  top: 75%; 
-  width: 210px;
+  top: 100%; 
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  width: 85vw;
+  max-width: 260px;
   background: #303f5e; 
   background-color: #303f5e;
   backdrop-filter: blur(8px); 
@@ -646,7 +649,13 @@ p {
 .text-block.visible .details-tooltip { 
   opacity: 1; 
   visibility: visible; 
-  transform: translateY(0); 
+  transform: translateX(-50%) translateY(0);
+}
+
+.left .details-tooltip,
+.right .details-tooltip {
+  left: 50%;
+  right: auto; 
 }
 
 .text-block {
@@ -665,13 +674,39 @@ p {
 @media (min-width: 768px) {
   .details-tooltip {
     width: 280px;
+    max-width: none;
+    left: auto;
+    transform: translateY(10px);
     font-size: 14px;
     padding: 14px;
   }
  .details-tooltip-title {
     font-size: 18px;
   }
+  .left .details-tooltip {
+    right: 20px; 
+    left: auto;
+    transform: translateY(10px);
+  }
+
+  .right .details-tooltip {
+    left: 20px; 
+    right: auto;
+    transform: translateY(10px);
+  }
+
+  .left .text-block:hover .details-tooltip,
+  .left .text-block.visible .details-tooltip {
+    transform: translateY(0);
+  }
+  
+  .right .text-block:hover .details-tooltip,
+  .right .text-block.visible .details-tooltip {
+    transform: translateY(0);
+  }
+  
 }
+
 
 .player {
   margin: 30px auto; 
