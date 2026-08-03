@@ -618,7 +618,7 @@ p {
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   width: 80vw;
-  max-width: 240px;
+  max-width: 210px;
   background: #303f5e; 
   background-color: #303f5e;
   backdrop-filter: blur(8px); 
