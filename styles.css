@@ -608,15 +608,17 @@ p {
 
 .text-block {
   position: relative;
+  cursor: pointer;
+  width: 100%;
 }
 
 .details-tooltip {
   position: absolute;
-  top: 100%; 
+  top: 75%; 
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  width: 85vw;
-  max-width: 260px;
+  width: 80vw;
+  max-width: 240px;
   background: #303f5e; 
   background-color: #303f5e;
   backdrop-filter: blur(8px); 
@@ -635,6 +637,7 @@ p {
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform: translateY(10px);
   z-index: 1000000;
+  box-sizing: border-box;
 }
 
 .details-tooltip-title {
@@ -645,31 +648,18 @@ p {
   display: block;
 }
 
-.text-block:hover .details-tooltip,
-.text-block.visible .details-tooltip { 
-  opacity: 1; 
-  visibility: visible; 
-  transform: translateX(-50%) translateY(0);
-}
-
 .left .details-tooltip,
 .right .details-tooltip {
   left: 50%;
   right: auto; 
 }
 
-.text-block {
-  cursor: pointer;
+.text-block:hover .details-tooltip,
+.text-block.visible .details-tooltip { 
+  opacity: 1; 
+  visibility: visible; 
+  transform: translateX(-50%) translateY(0);
 }
-
-.left .details-tooltip {
-  right: 20px; 
-}
-
-.right .details-tooltip {
-  left: 20px; 
-}
-
 
 @media (min-width: 768px) {
   .details-tooltip {
@@ -679,10 +669,12 @@ p {
     transform: translateY(10px);
     font-size: 14px;
     padding: 14px;
+    top: 75%;
   }
  .details-tooltip-title {
     font-size: 18px;
   }
+  
   .left .details-tooltip {
     right: 20px; 
     left: auto;
@@ -704,7 +696,7 @@ p {
   .right .text-block.visible .details-tooltip {
     transform: translateY(0);
   }
-  
+
 }
 
 
