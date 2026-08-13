@@ -715,18 +715,18 @@ p {
   border-radius: 30px;
   padding: 20px;
   margin: 20px auto;
-  width: 90%; /* Expanded to 90% so your text/cards fit on narrow mobile screens */
-  max-width: 600px; /* Limits size on larger views */
+  width: 90%; 
+  max-width: 600px; 
   box-sizing: border-box;
 }
 
 h6 {
   font-family: 'Cinzel Decorative', serif;
-  font-size: 26px; /* Scaled down from 45px so titles do not break into ugly multiple lines */
+  font-size: 26px;
   color: var(--blue);
   margin-bottom: 15px;
   display: flex;
-  gap: 10px; /* Fixed invalid '10px auto' syntax error */
+  gap: 10px; 
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -765,19 +765,18 @@ h6 {
             fill: var(--blue);
         }
 
-/* DESKTOP STYLES (Activates at 768px wide screens and above) */
 @media (min-width: 768px) {
   .player {
-    padding: 30px; /* Restored your original deep padding for large displays */
+    padding: 30px; 
     margin: 50px auto;
   }
 
   .social-container {
-    width: 60%; /* Returns container to your original narrow layout on desktop */
+    width: 60%; 
   }
 
   h6 {
-    font-size: 45px; /* Restored original cinematic heading font-size */
+    font-size: 45px;
   }
 }
 
@@ -786,13 +785,12 @@ h6 {
   max-width: 700px;
   margin: 30px auto;
   font-family: 'IBM plex mono';
-  padding: 0 15px; /* Keeps element away from touch screen glass edges */
+  padding: 0 15px;
 }
 
-/* Tabs will wrap into rows or scale proportionally on phones */
 .tabs {
   display: flex;
-  flex-wrap: wrap; /* Allows tabs to drop down safely instead of squishing text */
+  flex-wrap: wrap; 
   align-items: flex-end;
   width: 100%;
 }
@@ -800,14 +798,14 @@ h6 {
 .tab {
   font-family: inherit;
   font-weight: bold;
-  font-size: 13px; /* Scaled down slightly for mobile rows */
-  padding: 10px 14px; /* More compact padding for tighter layouts */
+  font-size: 13px; 
+  padding: 10px 14px; 
   border: none;
   border-radius: 12px 12px 0 0;
   cursor: pointer;
   color: var(--blue);
   transition: all 0.15s ease-in-out;
-  flex: 1 1 auto; /* Allows all tabs to distribute space evenly on phones */
+  flex: 1 1 auto; 
   text-align: center;
 }
 
@@ -821,10 +819,9 @@ h6 {
   z-index: 2;
 }
 
-/* Content panel defaults to uniform rounded edges on mobile if tabs wrap */
 .content-panel {
-  border-radius: 12px; /* Uniform rounded container works best with wrapped tabs */
-  padding: 20px 15px; /* Comfortable padding for narrow viewports */
+  border-radius: 12px; 
+  padding: 20px 15px;
   margin-top: -1px; 
   min-height: 350px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
@@ -842,7 +839,7 @@ h6 {
 
 .input-group label {
   display: block;
-  font-size: 16px; /* Scaled down from 20px to prevent wrapping labels */
+  font-size: 16px; 
   color: var(--blue);
   margin-bottom: 6px;
   padding-left: 4px;
@@ -856,11 +853,11 @@ h6 {
   background-color: var(--blue);
   border: none;
   outline: none;
-  padding: 12px 16px; /* Slightly slimmed down padding for input inputs */
+  padding: 12px 16px; 
   border-radius: 30px;
   color: var(--yellow);
   font-family: 'IBM plex mono';
-  font-size: 14px; /* Prevents iOS from auto-zooming web pages on form focus */
+  font-size: 14px; 
 }
 
 .input-group input::placeholder {
@@ -878,8 +875,8 @@ h6 {
 }
 
 .submit-button {
-  background-color: var(--blue); /* Flipped background and color to make it readable */
-  color: var(--yellow); /* Fixed missing dash syntax typo 'var(blue)' */
+  background-color: var(--blue);
+  color: var(--yellow); 
   font-family: 'IBM Plex Mono';
   font-size: 16px;
   font-weight: bold;
@@ -896,20 +893,19 @@ h6 {
   box-shadow: 0 6px 15px rgba(240, 234, 214, 0.4);
 }
 
-/* DESKTOP STYLES (Activates at 768px wide screens and above) */
 @media (min-width: 768px) {
   .interact-box {
     padding: 0;
   }
 
   .tabs {
-    flex-wrap: nowrap; /* Disables tab wrapping on large computer viewports */
+    flex-wrap: nowrap; 
   }
 
   .tab {
     font-size: 14px;
     padding: 12px 16px;
-    flex: none; /* Disables block auto-expansion */
+    flex: none; 
   }
 
   .tab.active {
@@ -917,7 +913,7 @@ h6 {
   }
 
   .content-panel {
-    border-radius: 0 24px 24px 24px; /* Restores asymmetrical classic folder tab style */
+    border-radius: 0 24px 24px 24px; 
     padding: 30px 24px;
     min-height: 400px;
   }
