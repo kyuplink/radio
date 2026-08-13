@@ -1,6 +1,3 @@
-// ==========================================
-// 1. TAB SWITCHING LOGIC (Kept Intact)
-// ==========================================
 const tabs = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.tab-content');
 
@@ -20,21 +17,15 @@ tabs.forEach(selectedTab => {
     });
 });
 
-// ==========================================
-// 2. LIVE DATA SHIPPING ENGINE (Fixed Selectors)
-// ==========================================
-// FIX: Changed from 'interaction-form' to 'interact-form' to match HTML
+
 const form = document.getElementById('interact-form'); 
-// FIX: Changed from '.submit-btn' to '.submit-button' to match HTML
 const submitBtn = document.querySelector('.submit-button'); 
 
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyF2NcmtbNAc56I5HfrfeqKQdqW8FSr4_5dRScFukPdEIXIIoB98IoKPHMn8ldSsI5e/exec';
 
 form.addEventListener('submit', (event) => {
-    // This will now stop the reload successfully because the form is correctly targeted
     event.preventDefault();
 
-    // Visual loading state updates
     submitBtn.textContent = "Sending...";
     submitBtn.disabled = true;
 
@@ -42,7 +33,6 @@ form.addEventListener('submit', (event) => {
     const formData = new FormData(form);
     const rawData = Object.fromEntries(formData.entries());
 
-    // Normalize different input configurations into universal columns
     let finalPayload = { type: activeTab };
 
     if (activeTab === 'confessions') {
@@ -56,7 +46,6 @@ form.addEventListener('submit', (event) => {
         finalPayload.metaDetails = "N/A";
     }
 
-    // Ship data payload using form-urlencoded formatting to bypass CORS limitations
     fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors', 
@@ -74,13 +63,11 @@ form.addEventListener('submit', (event) => {
         alert("Transmission dropped. Please try again.");
     })
     .finally(() => {
-        // Restore interactive state buttons
         submitBtn.textContent = "Submit";
         submitBtn.disabled = false;
     });
 });
 
-    // Normalize different input configurations into universal columns
     let finalPayload = { type: activeTab };
 
     if (activeTab === 'confessions') {
