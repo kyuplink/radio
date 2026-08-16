@@ -45,20 +45,42 @@
     <h1>ARCHIVE</h1>
 </div>
 
- <!--<header class="schedule-header">
-        <br><div class="date">07/07/2007</div><br>
-        <div class="date">06/07/2007</div>
-  </header>-->
-
- <section>
+<section>
+  <button class="date" onclick="toggleDate('embed-1')">09/04/2026</button>
+  <div id="embed-1" class="spotify-embed">
     <div class="player">
-    <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2299987847&color=%23182d61&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-    <div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-      <a href="https://soundcloud.com/kyuplink" title="KYUplink" target="_blank" style="color: #cccccc; text-decoration: none;">KYUplink</a> · 
-      <a href="https://soundcloud.com/kyuplink/kyuplinks-first-test-broadcast" title="KYUplink&#x27;s First Test Broadcast" target="_blank" style="color: #cccccc; text-decoration: none;">KYUplink&#x27;s First Test Broadcast
-    </a>
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/6UyezPV3X020z1YJTqnYyi?utm_source=generator&t=0&si=104840f113f84c7a" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
   </div>
-  </section>
+
+
+  <button class="date" onclick="toggleDate('embed-2')">04/08/2026</button>
+  <div id="embed-2" class="spotify-embed">
+     <div class="player">
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/episode/3y3kknzSn7PCGWpzH5Vs7z?utm_source=generator&t=0&si=c037acfe2ed54b44" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
+  </div>
+</section>
+
+<script>
+function toggleDate(targetId) {
+  const targetEmbed = document.getElementById(targetId);
+  
+  if (!targetEmbed) return; 
+
+  const isAlreadyOpen = targetEmbed.classList.contains('open');
+
+  document.querySelectorAll('.spotify-embed').forEach(embed => {
+    embed.classList.remove('open');
+  });
+ 
+  if (!isAlreadyOpen) {
+    targetEmbed.classList.add('open');
+  }
+}
+
+</script>
+
+
 </body>
 </html>
